@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>GAINet</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-pale-yellow w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">GAINet</a>
+    <a href="#B-E" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Baseline experiments</a>
+    <a href="#V-E" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Varying context and gap sizes</a>
+    <a href="#G-E" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">GAN experiments</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#B-E" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Baseline experiments</a>
+    <a href="#V-E" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Varying context and gap sizes</a>
+    <a href="#G-E" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">GAN experiments</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-pale-yellow w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">GAINet</h1>
+    <h5 class="w3-xlarge">A Generative approach to Audio Inpainting</h5>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-32 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h5 class="w3-padding-32">
+        <p>
+        </p>
+        <p>
+        </p>
+      </h5>
+
+
+      <h1><img src="" alt="UNet architecture" width=100%></h1>
+
+      <h5 class="w3-padding-32"></h5>
+
+      <h5 class="w3-padding-32">
+<p></p>
+<p></p>
+</h5>
+    </div>
+</div>
+</div>
+
+<!-- Second Grid -->
+<div id="B-E" class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Baseline experiments: Image examples</h1>
+
+        <div class="row">
+          <div class="column">
+            <h2> Original </h2>
+            <img src="images/report_examples/2324_orig.-000.png">
+            <img src="images/report_examples/2596_orig.-000.png">
+            <img src="images/report_examples/15324_orig.-000.png">
+          </div>
+          <div class="column">
+            <h2> Source </h2>
+            <img src="images/report_examples/2324_gap.-000.png">
+            <img src="images/report_examples/2596_gap.-000.png">
+            <img src="images/report_examples/15324_gap.-000.png">
+          </div>
+          <div class="column">
+            <h2>Interpolation</h2>
+            <img src="images/report_examples/2324_interp.-000.png">
+            <img src="images/report_examples/2596_interp.-000.png">
+            <img src="images/report_examples/15324_interp.-000.png">
+          </div>
+          <div class="column">
+            <h2> LPC </h2>
+            <img src="images/report_examples/2324_lpc.-000.png" style="width:218px;height:218px;">
+            <img src="images/report_examples/2596_lpc.-000.png" style="width:218px;height:218px;">
+            <img src="images/report_examples/15324_lpc.-000.png" style="width:218px;height:218px;">
+          </div>
+          <div class="column">
+            <h2> UNet </h2>
+            <img src="images/report_examples/2324_nn.-000.png">
+            <img src="images/report_examples/2596_nn.-000.png">
+            <img src="images/report_examples/15324_nn.-000.png">
+          </div>
+        </div>
+
+         <h6></h6>
+
+         <h5>
+         <p> 
+         </p>
+         <p></p>
+         <p></p>
+         </h5>
+
+</div>
+</div>
+</div>
+
+<!-- Third Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+
+    <div class="w3-twothird">
+      <h1>Baseline experiments: Sound examples</h1>
+        <h5></h5>
+
+            <ul style="list-style-type:none">
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_ORG.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Original
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_TDERIV.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Source
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Interpolation
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> LPC
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> UNet
+                </li>
+            </ul>
+            
+<div class="aligncenter" style="width:150%;height:2px;background-color:#777777;"></div> 
+         
+        <h5></h5>
+
+            <ul style="list-style-type:none">
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_ORG.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Original
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_TDERIV.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Source
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Interpolation
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> LPC
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> UNet
+                </li>
+            </ul>
+<div class="aligncenter" style="width:150%;height:2px;background-color:#777777;"></div> 
+
+        <h5></h5>
+            <ul style="list-style-type:none">
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_ORG.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Original
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_TDERIV.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Source
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Interpolation
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> LPC
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> UNet
+                </li>
+            </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- Second Grid -->
+<div id="V-E" class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Varying context and gap sizes: Image examples</h1>
+
+        <div class="row">
+          <div class="column">
+            <div style="width:218px;height:218px;text-align:center;padding:116px 0"><p><h3>Gap 32ms</h3></p></div>
+            <div style="width:218px;height:218px;text-align:center;padding:116px 0"><p><h3>Gap 64ms</h3></p></div>
+            <div style="width:218px;height:218px;text-align:center;padding:116px 0"><p><h3>Gap 128ms</h3></p></div>
+            <div style="width:218px;height:218px;text-align:center;padding:116px 0"><p><h3>Gap 256ms</h3></p></div>
+          </div>
+          <div class="column">
+            <h3>Context 32ms</h3>
+            <img src="images/report_examples/2324_orig.-000.png">
+            <img src="images/report_examples/2596_orig.-000.png">
+            <img src="images/report_examples/15324_orig.-000.png">
+            <img src="images/report_examples/15324_gap.-000.png">
+          </div>
+          <div class="column">
+            <h3>Context 64ms</h3>
+            <img src="images/report_examples/2324_gap.-000.png">
+            <img src="images/report_examples/2596_gap.-000.png">
+            <img src="images/report_examples/15324_gap.-000.png">
+            <img src="images/report_examples/15324_gap.-000.png">
+          </div>
+          <div class="column">
+            <h3>Context 128ms</h3>
+            <img src="images/report_examples/2324_interp.-000.png">
+            <img src="images/report_examples/2596_interp.-000.png">
+            <img src="images/report_examples/15324_interp.-000.png">
+            <img src="images/report_examples/15324_interp.-000.png">
+          </div>
+          <div class="column">
+            <h3>Context 256ms</h3>
+            <img src="images/report_examples/2324_lpc.-000.png" style="width:218px;height:218px;">
+            <img src="images/report_examples/2596_lpc.-000.png" style="width:218px;height:218px;">
+            <img src="images/report_examples/15324_lpc.-000.png" style="width:218px;height:218px;">
+            <img src="images/report_examples/15324_lpc.-000.png" style="width:218px;height:218px;">
+          </div>
+        </div>
+
+         <h6></h6>
+
+         <h5>
+         <p> 
+         </p>
+         <p></p>
+         <p></p>
+         </h5>
+
+</div>
+</div>
+</div>
+
+<!-- Third Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+
+    <div class="w3-twothird">
+      <h1>Varying context and gap sizes: Sound examples</h1>
+        <h5></h5>
+
+            <ul style="list-style-type:none">
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_ORG.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Original
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_TDERIV.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 32ms Gap 32ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 32ms Gap 64ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 32ms Gap 128ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 32ms Gap 256ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_TDERIV.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 64ms Gap 32ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 64ms Gap 64ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 64ms Gap 128ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 64ms Gap 256ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_TDERIV.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 128ms Gap 32ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 128ms Gap 64ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 128ms Gap 128ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 128ms Gap 256ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_TDERIV.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 256ms Gap 32ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 256ms Gap 64ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 256ms Gap 128ms 
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Context 256ms Gap 256ms 
+                </li>
+            </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- Second Grid -->
+<div id="G-E" class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>GAN experiments: Image examples</h1>
+
+        <div class="row">
+          <div class="column">
+            <div style="width:218px;height:218px;text-align:center;padding:116px 0"><p><h3>Original</h3></p></div>
+            <div style="width:218px;height:218px;text-align:center;padding:116px 0"><p><h3>UNet</h3></p></div>
+            <div style="width:218px;height:218px;text-align:center;padding:116px 0"><p><h3>GAINet</h3></p></div>
+          </div>
+          <div class="column">
+            <img src="images/report_examples/2324_gap.-000.png">
+            <img src="images/report_examples/2324_nn.-000.png">
+            <img src="images/report_examples/2324_nn.-000.png">
+          </div>
+          <div class="column">
+            <img src="images/report_examples/2596_gap.-000.png">
+            <img src="images/report_examples/2596_nn.-000.png">
+            <img src="images/report_examples/2596_nn.-000.png">
+          </div>
+          <div class="column">
+            <img src="images/report_examples/15324_gap.-000.png">
+            <img src="images/report_examples/15324_nn.-000.png">
+            <img src="images/report_examples/15324_nn.-000.png">
+          </div>
+          <div class="column">
+            <img src="images/report_examples/15324_gap.-000.png">
+            <img src="images/report_examples/2596_nn.-000.png">
+            <img src="images/report_examples/2596_nn.-000.png">
+          </div>
+        </div>
+
+         <h6></h6>
+
+         <h5>
+         <p> 
+         </p>
+         <p></p>
+         <p></p>
+         </h5>
+
+</div>
+</div>
+</div>
+
+<!-- Third Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+
+    <div class="w3-twothird">
+      <h1>GAN experiments: Sound examples</h1>
+        <h5></h5>
+
+            <ul style="list-style-type:none">
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_ORG.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Original
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_TDERIV.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> UNet
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> GAINet
+                </li>
+            </ul>
+            
+<div class="aligncenter" style="width:150%;height:2px;background-color:#777777;"></div> 
+         
+        <h5></h5>
+
+            <ul style="list-style-type:none">
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_ORG.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Original
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_TDERIV.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> UNet
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> GAINet
+                </li>
+            </ul>
+<div class="aligncenter" style="width:150%;height:2px;background-color:#777777;"></div> 
+
+        <h5></h5>
+            <ul style="list-style-type:none">
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_ORG.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Original
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_TDERIV.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> UNet
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> GAINet
+                </li>
+            </ul>
+
+<div class="aligncenter" style="width:150%;height:2px;background-color:#777777;"></div> 
+            <ul style="list-style-type:none">
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_ORG.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> Original
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_TDERIV.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> UNet
+                </li>
+                <li><audio controls>
+                    <source src="audio_examples/phase/50_maleeng_PGHI.flac" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio> GAINet
+                </li>
+            </ul>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Quote of the day: phase life</h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+  <div class="w3-xlarge w3-padding-32">
+    <a href="https://github.com/tifgan/stftGAN" class="fa fa-github w3-hover-opacity"></a>
+ </div>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
